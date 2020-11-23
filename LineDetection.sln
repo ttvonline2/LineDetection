@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineDetection", "LineDetection\LineDetection.csproj", "{B6C965D3-179D-432A-8F1D-067816B01AAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6C965D3-179D-432A-8F1D-067816B01AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6C965D3-179D-432A-8F1D-067816B01AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6C965D3-179D-432A-8F1D-067816B01AAE}.Debug|x64.ActiveCfg = Debug|x64
+		{B6C965D3-179D-432A-8F1D-067816B01AAE}.Debug|x64.Build.0 = Debug|x64
+		{B6C965D3-179D-432A-8F1D-067816B01AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6C965D3-179D-432A-8F1D-067816B01AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6C965D3-179D-432A-8F1D-067816B01AAE}.Release|x64.ActiveCfg = Release|x64
+		{B6C965D3-179D-432A-8F1D-067816B01AAE}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1540B9A-2F37-486D-AFF5-DCFA800615CF}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿<Window x:Class="LineDetection.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LineDetection"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#F2222222">
+            <Image Height="600" Width="800" x:Name="im_line" Margin="200,31,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button x:Name="bt_load" Background="Green" Click="bt_load_Click" Content="Load Image" Height="50" Width="100" Margin="26,28,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button x:Name="bt_Detect" Background="Orange" Click="bt_Detect_Click" Content="Detect Line" Height="50" Width="100" Margin="29,106,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        </Grid>
+        <Grid Background="#F4444444" Grid.Column="1">
+            <WebBrowser x:Name="wb_web"/>
+        </Grid>
+    </Grid>
+    
+    
+</Window>
