@@ -24,14 +24,15 @@ namespace LineDetection
     /// </summary>
     public partial class MainWindow : Window
     {
+        int int_count = 0;
         string st_filepath = "";
-        int int_width = 40;
-        int int_height = 40;
-        int[,] Ar_Pixel = new int[40, 40];
+        int int_width = 20;
+        int int_height = 20;
+        int[,] Ar_Pixel = new int[20, 20];
         public MainWindow()
         {
             InitializeComponent();
-            wb_web.Navigate("http://www.google.com");
+            //wb_web.Navigate("https://www.w3schools.com/howto/howto_js_rangeslider.asp");
         }
 
         private void bt_load_Click(object sender, RoutedEventArgs e)
@@ -109,7 +110,6 @@ namespace LineDetection
                 bitmapimage.StreamSource = memory;
                 bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
                 bitmapimage.EndInit();
-
                 return bitmapimage;
             }
         }
@@ -118,6 +118,43 @@ namespace LineDetection
             return new Bitmap(imgToResize, size);
         }
 
-      //  yourImage = resizeImage(yourImage, new Size(50,50));
+        private void bt_shot_Click(object sender, RoutedEventArgs e)
+        {
+                Bitmap bitmap_Screen = new Bitmap(100, 100);
+                Graphics g = Graphics.FromImage(bitmap_Screen);
+
+                g.CopyFromScreen(0, 0, 0, 0, bitmap_Screen.Size);
+
+                bitmap_Screen = resizeImage(bitmap_Screen, new System.Drawing.Size(int_width, int_height));
+                System.Drawing.Color[,] pixel = new System.Drawing.Color[int_width, int_width];
+                for (int i = 0; i < bitmap_Screen.Width; i++)
+                {
+                    for (int j = 0; j < bitmap_Screen.Height; j++)
+                    {
+                        pixel[i, j] = bitmap_Screen.GetPixel(i, j);
+                    }
+                }
+                // Change pixel to image
+                Bitmap _BM = new Bitmap(int_width, int_height);
+                for (int i = 0; i < int_width; i++)
+                {
+                    for (int j = 0; j < int_height; j++)
+                    {
+                        Ar_Pixel[i, j] = (pixel[i, j].R + pixel[i, j].G + pixel[i, j].B) / 3;
+                        System.Drawing.Color _cl = System.Drawing.Color.FromArgb(255, Ar_Pixel[i, j], Ar_Pixel[i, j], Ar_Pixel[i, j]);
+                        _BM.SetPixel(i, j, _cl);
+                    }
+                }
+
+                im_line.Source = BitmapToImageSource(_BM);
+                SavePixel(Ar_Pixel);
+                //     Bitmap _bmnew = resizeImage(bitmap_Screen, new System.Drawing.Size(80, 60));
+                    bitmap_Screen.Save(int_count++ + ".png");
+            
+            MessageBox.Show("Done");
+           
+        }
+
+        //  yourImage = resizeImage(yourImage, new Size(50,50));
     }
 }
