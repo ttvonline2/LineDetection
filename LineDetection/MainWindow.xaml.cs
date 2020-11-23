@@ -42,6 +42,7 @@ namespace LineDetection
                 Uri fileUri = new Uri(openFileDialog.FileName);
                 st_filepath = openFileDialog.FileName;
                 im_line.Source = new BitmapImage(fileUri);
+                //hello
             }
         }
 
