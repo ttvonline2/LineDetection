@@ -69,15 +69,6 @@ namespace LineDetection
                     Ar_Pixel[i, j] = (pixel[i, j].R + pixel[i, j].G + pixel[i, j].B) / 3;
                     System.Drawing.Color _cl = System.Drawing.Color.FromArgb(255, Ar_Pixel[i, j], Ar_Pixel[i, j], Ar_Pixel[i, j]);
                     _BM.SetPixel(i,j,_cl);
-                    //if((pixel[i,j].R+ pixel[i, j].G + pixel[i, j].B)>550)
-                    //{
-                    //    System.Drawing.Color _cl = System.Drawing.Color.FromArgb(255,0,0,0);
-                    //    _BM.SetPixel(i,j,_cl);
-                    //}
-                    //else
-                    //{
-                    //    _BM.SetPixel(i,j,pixel[i, j]);
-                    //}
 
                 }
             }
